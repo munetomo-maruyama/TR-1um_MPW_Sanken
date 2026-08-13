@@ -1,12 +1,121 @@
-** sch_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/tr_1um_sanken.sch
-.subckt tr_1um_sanken P1 P2 P3 P4 P5 P6 P7 VSS VDD P15 P14 P13 P12 P11 P10 P9
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/tr_1um_sanken.sch
+.subckt tr_1um_sanken P1 VDD P2 P15 P14 P3 P4 P13 P5 P12 P6 P11 P10 P7 P9 VSS
 *.PININFO P1:B P2:B P3:B P4:B P5:B P6:B P7:B VSS:B VDD:B P15:B P14:B P13:B P12:B P11:B P10:B P9:B
+XR1 VDD P15 VDD F_RR w=2.8e-06 l=100e-06
+XR2 VDD P14 VDD F_RR w=2.8e-06 l=100e-06
+XR3 VDD P13 VDD F_RR w=2.8e-06 l=100e-06
+XR4 VDD P12 VDD F_RR w=2.8e-06 l=100e-06
+x2 VDD P15 SEL3N VSS INV_X1
+x3 VDD SEL3N SEL3P VSS INV_X1
+x4 VDD P14 SEL2N VSS INV_X1
+x5 VDD SEL2N SEL2P VSS INV_X1
+x6 VDD P13 SEL1N VSS INV_X1
+x7 VDD SEL1N SEL1P VSS INV_X1
+x8 VDD P12 SEL0N VSS INV_X1
+x9 VDD SEL0N SEL0P VSS INV_X1
+x42 VDD VSS net7 net1 net2 net6 net9 net5 net10 net4 net3 net8 ISHIKAI_INV
+x53 VDD PJENF net2 P2 VSS ASW
+x54 VDD PJENF net1 P4 VSS ASW
+x55 VDD PJENF net5 P6 VSS ASW
+x56 VDD PJENF net3 P9 VSS ASW
+x57 VDD PJENF net4 P11 VSS ASW
+x43 VDD PJENF P1 net9 VSS ASWL
+x44 VDD PJENF P3 net7 VSS ASWL
+x45 VDD PJENF P5 net6 VSS ASWL
+x46 VDD PJENF P7 net8 VSS ASWL
+x47 VDD PJENF P10 net10 VSS ASWL
+x10 SEL0P SEL1P VDD PJENF SEL3P SEL2P VSS AND4_X1
+x11 SEL0N SEL1P VDD PJENE SEL3P SEL2P VSS AND4_X1
+x12 SEL0P SEL1N VDD PJEND SEL3P SEL2P VSS AND4_X1
+x13 SEL0N SEL1N VDD PJENC SEL3P SEL2P VSS AND4_X1
+x14 SEL0P SEL1P VDD PJENB SEL3P SEL2N VSS AND4_X1
+x15 SEL0N SEL1P VDD PJENA SEL3P SEL2N VSS AND4_X1
+x16 SEL0P SEL1N VDD PJEN9 SEL3P SEL2N VSS AND4_X1
+x17 SEL0N SEL1N VDD PJEN8 SEL3P SEL2N VSS AND4_X1
+x18 SEL0P SEL1P VDD PJEN7 SEL3N SEL2P VSS AND4_X1
+x19 SEL0N SEL1P VDD PJEN6 SEL3N SEL2P VSS AND4_X1
+x20 SEL0P SEL1N VDD PJEN5 SEL3N SEL2P VSS AND4_X1
+x21 SEL0N SEL1N VDD PJEN4 SEL3N SEL2P VSS AND4_X1
+x22 SEL0P SEL1P VDD PJEN3 SEL3N SEL2N VSS AND4_X1
+x23 SEL0N SEL1P VDD PJEN2 SEL3N SEL2N VSS AND4_X1
+x24 SEL0P SEL1N VDD PJEN1 SEL3N SEL2N VSS AND4_X1
+x25 SEL0N SEL1N VDD PJEN0 SEL3N SEL2N VSS AND4_X1
 x1 P1 VDD P2 P15 P14 P3 P4 P13 P5 P12 P6 P11 P10 P7 P9 VSS OSS_FRAME
 .ends
 
+* expanding   symbol:  TR-1um_5_stdcell/INV_X1.sym # of pins=4
+** sym_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/INV_X1.sym
+** sch_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/INV_X1.sch
+.subckt INV_X1 VDD A Y GND
+*.PININFO A:I Y:O GND:B VDD:B
+MM7 Y A VDD VDD PMOS w=10.2u l=1u
+MM2 Y A GND GND NMOS w=3.4u l=1u
+.ends
+
+
+* expanding   symbol:  ISHIKAI_INV.sym # of pins=12
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/ISHIKAI_INV.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/ISHIKAI_INV.sch
+.subckt ISHIKAI_INV VDD VSS INV_IN_2 INV_OUT_2 INV_OUT_1 INV_IN_3 INV_IN_1 INV_OUT_3 INV_IN_5 INV_OUT_5 INV_OUT_4 INV_IN_4
+*.PININFO INV_IN_1:I INV_OUT_1:O VDD:B VSS:B INV_OUT_2:O INV_IN_2:I INV_IN_3:I INV_OUT_3:O INV_IN_4:I INV_OUT_4:O INV_IN_5:I
+*+ INV_OUT_5:O
+MM1 INV_OUT_1 INV_IN_1 VDD VDD PMOS w=3.4u l=1u
+MM2 INV_OUT_1 INV_IN_1 VSS VSS NMOS w=3.4u l=1u
+MXM1 INV_OUT_2 INV_IN_2 VDD VDD PMOS w=9u l=1u
+MXM2 INV_OUT_2 INV_IN_2 VSS VSS NMOS w=3.4u l=1u
+MM3 INV_OUT_3 INV_IN_3 VDD VDD PMOS w=3.4u l=1u
+MM4 INV_OUT_3 INV_IN_3 VSS VSS NMOS w=3.4u l=1u
+MM5 INV_OUT_4 INV_IN_4 VDD VDD PMOS w=3.4u l=1u m=3
+MXM3 INV_OUT_4 INV_IN_4 VSS VSS NMOS w=3.4u l=1u
+MXM4 INV_OUT_5 INV_IN_5 VDD VDD PMOS w=3.4u l=1u
+MXM5 INV_OUT_5 INV_IN_5 VSS VSS NMOS w=3.4u l=1u
+.ends
+
+
+* expanding   symbol:  ASW.sym # of pins=5
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/ASW.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/ASW.sch
+.subckt ASW VDD E A B VSS
+*.PININFO E:I B:B VDD:B VSS:B A:B
+MXM1 B net1 A VDD PMOS w=20u l=1u m=15
+MXM2 A E B VSS NMOS w=8u l=1u m=15
+x1 VDD E net1 VSS INV_X1
+.ends
+
+
+* expanding   symbol:  ASWL.sym # of pins=5
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/ASWL.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/ASWL.sch
+.subckt ASWL VDD E A B VSS
+*.PININFO E:I B:B VDD:B VSS:B A:B
+MXM1 B net1 A VDD PMOS w=20u l=1u m=15
+MXM2 A E B VSS NMOS w=8u l=1u m=15
+x1 VDD E net1 VSS INV_X1
+MXM3 B net1 VSS VSS NMOS w=8u l=1u
+.ends
+
+
+* expanding   symbol:  TR-1um_5_stdcell/AND4_X1.sym # of pins=7
+** sym_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/AND4_X1.sym
+** sch_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/AND4_X1.sch
+.subckt AND4_X1 D C VDD Y A B GND
+*.PININFO Y:O A:I B:I VDD:B GND:B C:I D:I
+MM7 net1 A net4 GND NMOS w=3.4u l=1u
+MM5 net3 C net2 GND NMOS w=3.4u l=1u
+MM8 Y net1 GND GND NMOS w=3.4u l=1u
+MM10 net2 D GND GND NMOS w=3.4u l=1u
+MM6 net4 B net3 GND NMOS w=3.4u l=1u
+MM11 net1 A VDD VDD PMOS w=10.2u l=1u
+MM1 net1 D VDD VDD PMOS w=10.2u l=1u
+MM3 net1 C VDD VDD PMOS w=10.2u l=1u
+MM4 Y net1 VDD VDD PMOS w=10.2u l=1u
+MM2 net1 B VDD VDD PMOS w=10.2u l=1u
+.ends
+
+
 * expanding   symbol:  OSS_FRAME.sym # of pins=16
-** sym_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/OSS_FRAME.sym
-** sch_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/OSS_FRAME.sch
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_FRAME.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_FRAME.sch
 .subckt OSS_FRAME P1 VDD P2 P15 P14 P3 P4 P13 P5 P12 P6 P11 P10 P7 P9 VSS
 *.PININFO P1:B P2:B P3:B P4:B P5:B P6:B P7:B VSS:B VDD:B P15:B P14:B P13:B P12:B P11:B P10:B P9:B
 x1 VDD P1 VSS OSS_ESD_5V_ANA
@@ -29,8 +138,8 @@ x16 VDD P9 VSS OSS_ESD_5V_ANA
 
 
 * expanding   symbol:  OSS_ESD_5V_ANA.sym # of pins=4
-** sym_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/OSS_ESD_5V_ANA.sym
-** sch_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/OSS_ESD_5V_ANA.sch
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_ESD_5V_ANA.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_ESD_5V_ANA.sch
 .subckt OSS_ESD_5V_ANA VDD PAD VSS
 *.PININFO PAD:B VDD:B VSS:B
 MXM1 PAD VDD VDD VDD PMOS w=500u l=2u
@@ -39,21 +148,21 @@ MXM2 PAD VSS VSS VSS NMOSE w=500u l=2u
 
 
 * expanding   symbol:  OSS_ESD_5V_VDD.sym # of pins=3
-** sym_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/OSS_ESD_5V_VDD.sym
-** sch_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/OSS_ESD_5V_VDD.sch
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_ESD_5V_VDD.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_ESD_5V_VDD.sch
 .subckt OSS_ESD_5V_VDD VDD VSS
-*.PININFO VDD:B VSS:B
-MXM1 VDD VDD VDD VDD PMOS w=500u l=2u
-MXM2 VDD VSS VSS VSS NMOSE w=500u l=2u
+*.PININFO VSS:B VDD:B VDD:B
+MXM5 VSS VDD VDD VDD PMOS w=500u l=2u
+MXM6 VDD VSS VSS VSS NMOSE w=500u l=2u
 .ends
 
 
 * expanding   symbol:  OSS_ESD_5V_VSS.sym # of pins=3
-** sym_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/OSS_ESD_5V_VSS.sym
-** sch_path: /home/ossemi/OpenSUSI_TR10/Sanken/TR-1um_MPW_Sanken/src/OSS_ESD_5V_VSS.sch
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_ESD_5V_VSS.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_ESD_5V_VSS.sch
 .subckt OSS_ESD_5V_VSS VDD VSS
-*.PININFO VSS:B VDD:B
-MXM1 VSS VDD VDD VDD PMOS w=500u l=2u
-MXM2 VSS VSS VSS VSS NMOSE w=500u l=2u
+*.PININFO VSS:B VDD:B VSS:B
+MXM3 VSS VDD VDD VDD PMOS w=500u l=2u
+MXM4 VDD VSS VSS VSS NMOSE w=500u l=2u
 .ends
 
