@@ -9,6 +9,7 @@ T {OSS_Frame} -90 -670 0 0 0.4 0.4 {}
 T {Project Selector} 350 -670 0 0 0.4 0.4 {}
 T {Project15
 ISHIKAI_INV} 180 260 0 0 0.8 0.8 {}
+T {Project14 fujii_inverter} 780 210 0 0 0.8 0.8 {}
 N -60 -610 10 -610 {lab=P1}
 N -60 -590 10 -590 {lab=P2}
 N -60 -570 10 -570 {lab=P3}
@@ -144,6 +145,22 @@ N 380 -110 1210 -110 {lab=VDD}
 N 380 10 1210 10 {lab=VSS}
 N 380 40 1210 40 {lab=VDD}
 N 380 160 1210 160 {lab=VSS}
+N 830 420 890 420 {lab=PJENE}
+N 830 590 890 590 {lab=PJENE}
+N 960 350 980 350 {lab=#net11}
+N 980 350 980 420 {lab=#net11}
+N 980 440 980 520 {lab=#net11}
+N 1130 420 1190 420 {lab=PJENE}
+N 1100 350 1100 420 {lab=#net12}
+N 1100 350 1120 350 {lab=#net12}
+N 1100 430 1100 520 {lab=#net12}
+N 1100 520 1120 520 {lab=#net12}
+N 830 420 830 630 {lab=PJENE}
+N 830 630 1190 630 {lab=PJENE}
+N 1190 590 1190 630 {lab=PJENE}
+N 1130 420 1130 630 {lab=PJENE}
+N 780 630 830 630 {lab=PJENE}
+N 960 520 980 520 {lab=#net11}
 C {devices/title.sym} -10 -770 0 0 {name=l1 author="Sanken Electric"}
 C {devices/iopin.sym} -60 -610 0 1 {name=p1 lab=P1}
 C {devices/iopin.sym} -60 -590 0 1 {name=p2 lab=P2}
@@ -397,3 +414,23 @@ C {TR-1um_5_stdcell/AND4_X1.sym} 1180 -50 0 0 {name=x24}
 C {TR-1um_5_stdcell/AND4_X1.sym} 1180 100 0 0 {name=x25}
 C {devices/lab_wire.sym} 1160 130 0 0 {name=p119 sig_type=std_logic lab=SEL0N}
 C {OSS_FRAME.sym} 70 -540 0 0 {name=x1}
+C {devices/lab_wire.sym} 820 350 0 0 {name=p126 sig_type=std_logic lab=P1}
+C {devices/lab_wire.sym} 820 520 0 0 {name=p133 sig_type=std_logic lab=P3}
+C {ASWL.sym} 890 350 0 0 {name=x26}
+C {ASWL.sym} 890 520 0 0 {name=x27}
+C {devices/lab_wire.sym} 930 590 0 1 {name=p140 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 930 420 0 1 {name=p143 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 930 450 0 1 {name=p145 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 930 280 0 1 {name=p146 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1020 380 0 1 {name=p149 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1020 460 0 1 {name=p150 sig_type=std_logic lab=VSS}
+C {ASW.sym} 1190 350 0 0 {name=x29}
+C {ASW.sym} 1190 520 0 0 {name=x30}
+C {devices/lab_wire.sym} 1230 280 0 1 {name=p151 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1230 450 0 1 {name=p152 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1230 420 0 1 {name=p153 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1260 350 0 1 {name=p155 sig_type=std_logic lab=P2}
+C {devices/lab_wire.sym} 1260 520 0 1 {name=p156 sig_type=std_logic lab=P4}
+C {devices/lab_wire.sym} 780 630 0 0 {name=p157 sig_type=std_logic lab=PJENE}
+C {devices/lab_wire.sym} 1230 590 0 1 {name=p144 sig_type=std_logic lab=VSS}
+C {fujii_inverter.sym} 1040 420 0 0 {name=x28}
