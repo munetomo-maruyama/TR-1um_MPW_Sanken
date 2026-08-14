@@ -41,6 +41,11 @@ x23 SEL0N SEL1P VDD PJEN2 SEL3N SEL2N VSS AND4_X1
 x24 SEL0P SEL1N VDD PJEN1 SEL3N SEL2N VSS AND4_X1
 x25 SEL0N SEL1N VDD PJEN0 SEL3N SEL2N VSS AND4_X1
 x1 P1 VDD P2 P15 P14 P3 P4 P13 P5 P12 P6 P11 P10 P7 P9 VSS OSS_FRAME
+x26 VDD PJENE P1 net11 VSS ASWL
+x27 VDD PJENE P3 net12 VSS ASWL
+x29 VDD PJENE net13 P2 VSS ASW
+x30 VDD PJENE net14 P4 VSS ASW
+x28 VDD net11 net13 VSS net14 net12 fujii_inverter
 .ends
 
 * expanding   symbol:  TR-1um_5_stdcell/INV_X1.sym # of pins=4
@@ -78,8 +83,9 @@ MXM5 INV_OUT_5 INV_IN_5 VSS VSS NMOS w=3.4u l=1u
 .subckt ASW VDD E A B VSS
 *.PININFO E:I B:B VDD:B VSS:B A:B
 MXM1 B net1 A VDD PMOS w=20u l=1u m=15
-MXM2 A E B VSS NMOS w=8u l=1u m=15
-x1 VDD E net1 VSS INV_X1
+MXM2 A net2 B VSS NMOS w=8u l=1u m=15
+x1 VDD net1 net2 VSS INV_X1
+x2 VDD E net1 VSS INV_X1
 .ends
 
 
@@ -89,8 +95,9 @@ x1 VDD E net1 VSS INV_X1
 .subckt ASWL VDD E A B VSS
 *.PININFO E:I B:B VDD:B VSS:B A:B
 MXM1 B net1 A VDD PMOS w=20u l=1u m=15
-MXM2 A E B VSS NMOS w=8u l=1u m=15
-x1 VDD E net1 VSS INV_X1
+MXM2 A net2 B VSS NMOS w=8u l=1u m=15
+x1 VDD net1 net2 VSS INV_X1
+x2 VDD E net1 VSS INV_X1
 MXM3 B net1 VSS VSS NMOS w=8u l=1u
 .ends
 
@@ -134,6 +141,20 @@ x13 VDD P12 VSS OSS_ESD_5V_ANA
 x14 VDD P11 VSS OSS_ESD_5V_ANA
 x15 VDD P10 VSS OSS_ESD_5V_ANA
 x16 VDD P9 VSS OSS_ESD_5V_ANA
+.ends
+
+
+* expanding   symbol:  fujii_inverter.sym # of pins=6
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/fujii_inverter.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/fujii_inverter.sch
+.subckt fujii_inverter VDD A Q VSS R B
+*.PININFO A:I Q:O VDD:B VSS:B B:I R:O
+MXM1 Q A VSS VSS NMOS w=4u l=1u
+MXM2 Q A VDD VDD PMOS w=10u l=1u
+MXM3 R B VSS VSS NMOS w=4u l=1u
+MXM4 R B VDD VDD PMOS w=10u l=1u
+MXM5 VDD VDD VDD VDD PMOS w=10u l=1u m=8
+MXM6 VSS VSS VSS VSS NMOS w=4u l=1u m=8
 .ends
 
 
