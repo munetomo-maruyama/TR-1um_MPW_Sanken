@@ -31,8 +31,8 @@ x23 SEL0N SEL1P VDD PJEN2 SEL3N SEL2N VSS AND4_X1
 x24 SEL0P SEL1N VDD PJEN1 SEL3N SEL2N VSS AND4_X1
 x25 SEL0N SEL1N VDD PJEN0 SEL3N SEL2N VSS AND4_X1
 x1 P1 VDD P2 P15 P14 P3 P4 P13 P5 P12 P6 P11 P10 P7 P9 VSS OSS_FRAME
-x28 VDD net11 net13 VSS net14 net12 fujii_inverter
-x33 VDD net15 net17 VSS net16 mmIB1MP mmVB37 mmVB18 mmIB1MN mmVB12 mmOPAMP
+x28 VDD net14 net15 VSS net16 net17 fujii_inverter
+x33 VDD net11 net13 VSS net12 mmIB1MP mmVB37 mmVB18 mmIB1MN mmVB12 mmOPAMP
 x34 mmVB18 VSS mmIB1MP mmIB1MN mmVB37 mmVBG mmVB12 VDD mmBIAS
 x43 VDD PJENF P1 net9 VSS ASWSL
 x44 VDD PJENF P3 net7 VSS ASWSL
@@ -44,19 +44,25 @@ x49 VDD PJENF net1 P4 VSS ASWS
 x50 VDD PJENF net5 P6 VSS ASWS
 x51 VDD PJENF net3 P9 VSS ASWS
 x52 VDD PJENF net4 P11 VSS ASWS
-x26 VDD PJENE P1 net11 VSS ASWSL
-x27 VDD PJENE P3 net12 VSS ASWSL
-x29 VDD PJENE net13 P2 VSS ASWS
-x30 VDD PJENE net14 P4 VSS ASWS
-x31 VDD PJEN4 P1 net15 VSS ASWSL
-x32 VDD PJEN4 P2 net16 VSS ASWSL
-x35 VDD PJEN4 net17 P3 VSS ASW
+x26 VDD PJENE P1 net14 VSS ASWSL
+x27 VDD PJENE P3 net17 VSS ASWSL
+x29 VDD PJENE net15 P2 VSS ASWS
+x30 VDD PJENE net16 P4 VSS ASWS
+x31 VDD PJEN4 P1 net11 VSS ASWSL
+x32 VDD PJEN4 P2 net12 VSS ASWSL
+x35 VDD PJEN4 net13 P3 VSS ASW
 x36 VDD PJEN4 mmVBG P4 VSS ASWS
 x37 VDD PJEN4 mmVB12 P5 VSS ASWS
 x38 VDD PJEN4 mmVB18 P6 VSS ASWS
 x39 VDD PJEN4 mmVB37 P7 VSS ASWS
 x40 VDD PJEN4 mmIB1MP P9 VSS ASWS
 x41 VDD PJEN4 mmIB1MN P10 VSS ASWS
+x59 VDD PJEND P5 net18 VSS ASWSL
+x61 VDD PJEND net19 P6 VSS ASWS
+x58 VDD net18 net19 VSS kawamoto_inverter
+x60 VDD PJENC P7 net20 VSS ASWSL
+x62 VDD PJENC net21 P9 VSS ASWS
+x63 VDD net20 net21 VSS kamiyama_inverter
 .ends
 
 * expanding   symbol:  TR-1um_5_stdcell/INV_X1.sym # of pins=4
@@ -436,6 +442,26 @@ MXM3 net1 E VDD VDD PMOS w=10.2u l=1u
 MXM4 net1 E VSS VSS NMOS w=3.4u l=1u
 MXM5 net2 net1 VDD VDD PMOS w=10.2u l=1u
 MXM6 net2 net1 VSS VSS NMOS w=3.4u l=1u
+.ends
+
+
+* expanding   symbol:  kawamoto_inverter.sym # of pins=4
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/kawamoto_inverter.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/kawamoto_inverter.sch
+.subckt kawamoto_inverter VDD A Q VSS
+*.PININFO A:I Q:O VSS:B VDD:B
+MXM1 Q A VSS VSS NMOS w=4u l=1u
+MXM2 Q A VDD VDD PMOS w=10u l=1u
+.ends
+
+
+* expanding   symbol:  kamiyama_inverter.sym # of pins=4
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/kamiyama_inverter.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/kamiyama_inverter.sch
+.subckt kamiyama_inverter VDD A Q VSS
+*.PININFO A:I Q:O VDD:B VSS:B
+MXM1 Q A VSS VSS NMOS w=4u l=1u
+MXM2 Q A VDD VDD PMOS w=10u l=1u
 .ends
 
 
