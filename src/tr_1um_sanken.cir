@@ -63,6 +63,20 @@ x58 VDD net18 net19 VSS kawamoto_inverter
 x60 VDD PJENC P7 net20 VSS ASWSL
 x62 VDD PJENC net21 P9 VSS ASWS
 x63 VDD net20 net21 VSS kamiyama_inverter
+x54 VDD PJEN7 P2 net28 VSS ASWSL
+x55 VDD PJEN7 P3 net29 VSS ASWSL
+x56 VDD PJEN7 P1 net30 VSS ASWSL
+x57 VDD PJEN7 net22 P4 VSS ASW
+x64 VDD PJEN7 net23 P6 VSS ASW
+x65 VDD PJEN7 net24 P9 VSS ASW
+x66 VDD PJEN7 net25 P7 VSS ASW
+x67 VDD PJEN7 net26 P10 VSS ASW
+x68 VDD PJEN7 net27 P5 VSS ASW
+x69 net22 net23 net24 VDD net28 net29 net30 VSS net25 net26 net27 kamiyama_Driver
+x53 VDD PJEN5 P1 net31 VSS ASWSL
+x70 VDD PJEN5 P2 net32 VSS ASWSL
+x71 VDD net32 net31 net33 VSS shishido_opamp_v12
+x72 VDD PJEN5 net33 P3 VSS ASW
 .ends
 
 * expanding   symbol:  TR-1um_5_stdcell/INV_X1.sym # of pins=4
@@ -465,6 +479,69 @@ MXM2 Q A VDD VDD PMOS w=10u l=1u
 .ends
 
 
+* expanding   symbol:  kamiyama_Driver.sym # of pins=11
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/kamiyama_Driver.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/kamiyama_Driver.sch
+.subckt kamiyama_Driver HsA HsB HsC VDD SigA SigB GateM VSS LsB LsC LsA
+*.PININFO VSS:B VDD:B SigA:I GateM:I HsA:O HsB:O HsC:O LsA:O LsC:O SigB:I LsB:O
+MXM1 net1 GateM VSS VSS NMOS w=10u l=1u
+x2 VDD net1 net2 VSS INV_X1
+x4 VDD net5 net3 VSS INV_X1
+x8 VDD SigA net7 VSS INV_X1
+x10 VDD net9 net10 VSS INV_X1
+x13 VDD SigB net6 VSS INV_X1
+XR2 VDD net1 VDD F_RR w=4e-06 l=20e-06
+XR3 net3 net4 VDD F_RR w=4e-06 l=42e-06
+XR4 net10 net11 VDD F_RR w=4e-06 l=42e-06
+x16 VDD net12 SigA net6 VSS NOR2
+x12 VDD net5 SigA net2 VSS NAND2
+x3 VDD net19 net4 net5 VSS NOR2
+x5 VDD net9 net8 SigB VSS NAND2
+x11 VDD net15 net9 net11 VSS NOR2
+x14 VDD net13 net1 net6 VSS NOR2
+x9 VDD net18 net13 SigA VSS NOR2
+x1 VDD net14 net7 SigB VSS NAND2
+XXC1 net11 VSS VSS F_CSIO x=60u y=60u A=3.6n P=240u
+XXC2 net4 VSS VSS F_CSIO x=110.0u y=52.0u A=5.72n P=324u
+x6 VDD net16 net19 net5 VSS NOR2
+x22 VDD net8 net17 net19 VSS NOR2
+x23 VDD net17 net8 net18 VSS NOR2
+x15 VDD net12 HsA VSS INV_X16
+x17 VDD net14 LsA VSS INV_X16
+x18 VDD net17 LsC VSS INV_X16
+x7 VDD net19 HsB VSS BUF_X16
+x19 VDD net16 HsC VSS BUF_X16
+x20 VDD net15 LsB VSS BUF_X16
+XR1 GateM VSS VDD F_RR w=4e-06 l=42e-06
+MXM2 net4 VSS VSS VSS NMOS w=3.4u l=1u
+MXM3 net11 VSS VSS VSS NMOS w=3.4u l=1u
+.ends
+
+
+* expanding   symbol:  shishido_opamp_v12.sym # of pins=5
+** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/shishido_opamp_v12.sym
+** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/shishido_opamp_v12.sch
+.subckt shishido_opamp_v12 VDD vinn vinp out VSS
+*.PININFO vinn:I out:O VSS:B vinp:I VDD:B
+MXM1 VSS net2 net2 VSS NMOS w=10u l=2u m=8
+MXM3 net2 vinn net1 VDD PMOS w=30u l=2u m=8
+MXM4 net1 vinp net3 VDD PMOS w=30u l=2u m=8
+MXM5 net1 net4 VDD VDD PMOS w=30u l=2u m=16
+MXM2 net3 net2 VSS VSS NMOS w=10u l=2u m=8
+MXM8 out net3 VSS VSS NMOS w=10u l=2u m=8
+MXM6 out net4 VDD VDD PMOS w=30u l=2u m=10
+MXM7 VDD net4 net4 VDD PMOS w=30u l=2u m=8
+XR2 net5 net3 F_RS w=4e-6 l=37.1e-6
+XR11 net4 net6 VDD F_RR w=2.8u l=28.2u
+XXC1 out net5 VSS F_CSIO x=80.6u y=80.6u A=6.496n P=322.4u
+XR1 net6 net7 VDD F_RR w=2.8u l=28.2u
+XR3 net7 net8 VDD F_RR w=2.8u l=28.2u
+XR4 net8 VSS VDD F_RR w=2.8u l=28.2u
+MXM10 VSS VSS VSS VSS NMOS w=10u l=2u m=4
+MXM9 VDD VDD VDD VDD PMOS w=30u l=2u m=6
+.ends
+
+
 * expanding   symbol:  OSS_ESD_5V_ANA.sym # of pins=4
 ** sym_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_ESD_5V_ANA.sym
 ** sch_path: /home/taka/ISHI_Kai/TokaiRIKA_TR10/Sanken_2026/TR-1um_MPW_Sanken/src/OSS_ESD_5V_ANA.sch
@@ -492,5 +569,51 @@ MXM6 VDD VSS VSS VSS NMOSE w=500u l=2u
 *.PININFO VSS:B VDD:B VSS:B
 MXM3 VSS VDD VDD VDD PMOS w=500u l=2u
 MXM4 VDD VSS VSS VSS NMOSE w=500u l=2u
+.ends
+
+
+* expanding   symbol:  TR-1um_5_stdcell/NOR2.sym # of pins=5
+** sym_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/NOR2.sym
+** sch_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/NOR2.sch
+.subckt NOR2 VDD Y A B GND
+*.PININFO A:I B:I Y:O VDD:B GND:B
+MM7 net1 A VDD VDD PMOS w=10.2u l=1u
+MM1 Y B net1 VDD PMOS w=10.2u l=1u
+MM2 Y A GND GND NMOS w=3.4u l=1u
+MM3 Y B GND GND NMOS w=3.4u l=1u
+.ends
+
+
+* expanding   symbol:  TR-1um_5_stdcell/NAND2.sym # of pins=5
+** sym_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/NAND2.sym
+** sch_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/NAND2.sch
+.subckt NAND2 VDD Y A B GND
+*.PININFO B:I A:I Y:O GND:B VDD:B
+MM7 Y A VDD VDD PMOS w=10.2u l=1u
+MM1 Y B VDD VDD PMOS w=10.2u l=1u
+MM2 Y B net1 GND NMOS w=3.4u l=1u
+MM3 net1 A GND GND NMOS w=3.4u l=1u
+.ends
+
+
+* expanding   symbol:  TR-1um_5_stdcell/INV_X16.sym # of pins=4
+** sym_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/INV_X16.sym
+** sch_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/INV_X16.sch
+.subckt INV_X16 VDD A Y GND
+*.PININFO A:I Y:O GND:B VDD:B
+MM7 Y A VDD VDD PMOS w=10.2u l=1u m=16
+MM1 Y A GND GND NMOS w=3.4u l=1u m=16
+.ends
+
+
+* expanding   symbol:  TR-1um_5_stdcell/BUF_X16.sym # of pins=4
+** sym_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/BUF_X16.sym
+** sch_path: /home/taka/pdk/TR-1um/libs.tech/xschem/TR-1um_5_stdcell/BUF_X16.sch
+.subckt BUF_X16 VDD A Y GND
+*.PININFO A:I Y:O VDD:B GND:B
+MM7 net1 A VDD VDD PMOS w=6.8u l=1u m=4
+MM1 Y net1 VDD VDD PMOS w=10.2u l=1u m=16
+MM3 net1 A GND GND NMOS w=3.4u l=1u m=4
+MM2 Y net1 GND GND NMOS w=3.4u l=1u m=16
 .ends
 
