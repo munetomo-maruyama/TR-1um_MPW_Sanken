@@ -9,10 +9,12 @@ T {OSS_Frame} -90 -670 0 0 0.4 0.4 {}
 T {Project Selector} 350 -670 0 0 0.4 0.4 {}
 T {Project15
 ISHIKAI_INV} 180 260 0 0 0.8 0.8 {}
-T {Project4 mmOPAMP+mmBIAS} 1570 -700 0 0 0.8 0.8 {}
+T {Project4 mmOPAMP+mmBIAS} 1500 350 0 0 0.8 0.8 {}
 T {Project14 fujii_inverter} 780 210 0 0 0.8 0.8 {}
 T {Project13 kawamoto_inverter} 780 650 0 0 0.8 0.8 {}
 T {Project12 kamiyama_inverter} 780 920 0 0 0.8 0.8 {}
+T {Project7 kamiyama_Driver} 1510 -840 0 0 0.8 0.8 {}
+T {Project5 shishido_opamp_v12} 1500 -150 0 0 0.8 0.8 {}
 N -60 -610 10 -610 {lab=P1}
 N -60 -590 10 -590 {lab=P2}
 N -60 -570 10 -570 {lab=P3}
@@ -148,31 +150,31 @@ N 380 -110 1210 -110 {lab=VDD}
 N 380 10 1210 10 {lab=VSS}
 N 380 40 1210 40 {lab=VDD}
 N 380 160 1210 160 {lab=VSS}
-N 1520 -440 1580 -440 {lab=PJEN4}
-N 1520 -270 1580 -270 {lab=PJEN4}
-N 1910 90 1970 90 {lab=PJEN4}
-N 1910 -440 1910 90 {lab=PJEN4}
-N 1910 -440 1970 -440 {lab=PJEN4}
-N 1910 90 1910 130 {lab=PJEN4}
-N 1500 130 1910 130 {lab=PJEN4}
-N 1520 -440 1520 -270 {lab=PJEN4}
-N 1520 -270 1520 130 {lab=PJEN4}
-N 1650 -510 1670 -510 {lab=#net11}
-N 1670 -510 1670 -470 {lab=#net11}
-N 1670 -470 1690 -470 {lab=#net11}
-N 1650 -340 1670 -340 {lab=#net12}
-N 1670 -390 1670 -340 {lab=#net12}
-N 1670 -390 1690 -390 {lab=#net12}
-N 1880 -510 1880 -430 {lab=#net13}
-N 1880 -510 1900 -510 {lab=#net13}
-N 1910 -260 1970 -260 {lab=PJEN4}
-N 1910 -80 1970 -80 {lab=PJEN4}
-N 2150 0 2210 0 {lab=PJEN4}
-N 2150 0 2150 130 {lab=PJEN4}
-N 1910 130 2150 130 {lab=PJEN4}
-N 2150 -350 2150 0 {lab=PJEN4}
-N 2150 -350 2210 -350 {lab=PJEN4}
-N 2150 -170 2210 -170 {lab=PJEN4}
+N 1510 600 1570 600 {lab=PJEN4}
+N 1510 770 1570 770 {lab=PJEN4}
+N 1900 1130 1960 1130 {lab=PJEN4}
+N 1900 600 1900 1130 {lab=PJEN4}
+N 1900 600 1960 600 {lab=PJEN4}
+N 1900 1130 1900 1170 {lab=PJEN4}
+N 1490 1170 1900 1170 {lab=PJEN4}
+N 1510 600 1510 770 {lab=PJEN4}
+N 1510 770 1510 1170 {lab=PJEN4}
+N 1640 530 1660 530 {lab=#net11}
+N 1660 530 1660 570 {lab=#net11}
+N 1660 570 1680 570 {lab=#net11}
+N 1640 700 1660 700 {lab=#net12}
+N 1660 650 1660 700 {lab=#net12}
+N 1660 650 1680 650 {lab=#net12}
+N 1870 530 1870 610 {lab=#net13}
+N 1870 530 1890 530 {lab=#net13}
+N 1900 780 1960 780 {lab=PJEN4}
+N 1900 960 1960 960 {lab=PJEN4}
+N 2140 1040 2200 1040 {lab=PJEN4}
+N 2140 1040 2140 1170 {lab=PJEN4}
+N 1900 1170 2140 1170 {lab=PJEN4}
+N 2140 690 2140 1040 {lab=PJEN4}
+N 2140 690 2200 690 {lab=PJEN4}
+N 2140 870 2200 870 {lab=PJEN4}
 N 830 420 890 420 {lab=PJENE}
 N 830 590 890 590 {lab=PJENE}
 N 960 350 980 350 {lab=#net14}
@@ -205,6 +207,60 @@ N 960 1060 990 1060 {lab=#net20}
 N 1090 1060 1120 1060 {lab=#net21}
 N 980 350 980 420 {lab=#net14}
 N 980 440 980 520 {lab=#net17}
+N 2110 -670 2110 -570 {lab=#net22}
+N 2030 -570 2110 -570 {lab=#net22}
+N 2030 -550 2110 -550 {lab=#net23}
+N 2110 -550 2110 -500 {lab=#net23}
+N 2030 -530 2090 -530 {lab=#net24}
+N 2090 -530 2090 -330 {lab=#net24}
+N 2090 -330 2110 -330 {lab=#net24}
+N 2030 -470 2070 -470 {lab=#net25}
+N 2070 -590 2070 -470 {lab=#net25}
+N 2310 -670 2310 -590 {lab=#net25}
+N 2030 -450 2070 -450 {lab=#net26}
+N 2070 -450 2070 -420 {lab=#net26}
+N 2310 -500 2310 -420 {lab=#net26}
+N 2030 -430 2050 -430 {lab=#net27}
+N 2050 -430 2050 -250 {lab=#net27}
+N 2310 -330 2310 -250 {lab=#net27}
+N 1640 -670 1640 -570 {lab=#net28}
+N 1640 -570 1730 -570 {lab=#net28}
+N 1640 -550 1640 -500 {lab=#net29}
+N 1640 -550 1730 -550 {lab=#net29}
+N 1660 -530 1730 -530 {lab=#net30}
+N 1660 -530 1660 -330 {lab=#net30}
+N 1640 -330 1660 -330 {lab=#net30}
+N 2070 -590 2310 -590 {lab=#net25}
+N 2070 -420 2310 -420 {lab=#net26}
+N 2050 -250 2310 -250 {lab=#net27}
+N 1510 -600 1570 -600 {lab=PJEN7}
+N 1510 -260 1570 -260 {lab=PJEN7}
+N 1510 -600 1510 -220 {lab=PJEN7}
+N 1450 -220 1510 -220 {lab=PJEN7}
+N 1510 -430 1570 -430 {lab=PJEN7}
+N 2120 -600 2180 -600 {lab=PJEN7}
+N 2120 -600 2120 -220 {lab=PJEN7}
+N 1510 -220 2120 -220 {lab=PJEN7}
+N 2120 -430 2180 -430 {lab=PJEN7}
+N 2120 -260 2180 -260 {lab=PJEN7}
+N 2320 -600 2380 -600 {lab=PJEN7}
+N 2320 -600 2320 -220 {lab=PJEN7}
+N 2120 -220 2320 -220 {lab=PJEN7}
+N 2320 -260 2380 -260 {lab=PJEN7}
+N 2320 -430 2380 -430 {lab=PJEN7}
+N 1640 70 1740 70 {lab=#net31}
+N 1640 20 1640 70 {lab=#net31}
+N 1640 130 1740 130 {lab=#net32}
+N 1640 130 1640 190 {lab=#net32}
+N 1920 100 2030 100 {lab=#net33}
+N 1510 90 1570 90 {lab=PJEN5}
+N 1510 90 1510 260 {lab=PJEN5}
+N 1510 260 1570 260 {lab=PJEN5}
+N 1460 300 1510 300 {lab=PJEN5}
+N 1510 260 1510 300 {lab=PJEN5}
+N 2040 170 2100 170 {lab=PJEN5}
+N 2040 170 2040 300 {lab=PJEN5}
+N 1510 300 2040 300 {lab=PJEN5}
 C {devices/title.sym} -10 -770 0 0 {name=l1 author="Sanken Electric"}
 C {devices/iopin.sym} -60 -610 0 1 {name=p1 lab=P1}
 C {devices/iopin.sym} -60 -590 0 1 {name=p2 lab=P2}
@@ -450,57 +506,57 @@ C {devices/lab_wire.sym} 1160 130 0 0 {name=p119 sig_type=std_logic lab=SEL0N}
 C {OSS_FRAME.sym} 70 -540 0 0 {name=x1}
 C {devices/lab_wire.sym} 780 630 0 0 {name=p157 sig_type=std_logic lab=PJENE}
 C {fujii_inverter.sym} 1040 420 0 0 {name=x28}
-C {devices/lab_wire.sym} 1510 -510 0 0 {name=p158 sig_type=std_logic lab=P1}
-C {devices/lab_wire.sym} 1510 -340 0 0 {name=p159 sig_type=std_logic lab=P2}
-C {devices/lab_wire.sym} 1620 -270 0 1 {name=p163 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 1620 -440 0 1 {name=p164 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 1620 -410 0 1 {name=p166 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 1620 -580 0 1 {name=p167 sig_type=std_logic lab=VDD}
-C {mmOPAMP.sym} 1720 -430 0 0 {name=x33}
-C {mmBIAS.sym} 1660 -60 0 0 {name=x34}
-C {devices/lab_wire.sym} 1500 130 0 0 {name=p160 sig_type=std_logic lab=PJEN4}
-C {devices/lab_wire.sym} 2040 -510 0 1 {name=p162 sig_type=std_logic lab=P3}
-C {devices/lab_wire.sym} 1580 40 0 0 {name=p165 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 1580 -160 0 0 {name=p177 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 1740 -160 0 1 {name=p178 sig_type=std_logic lab=mmIB1MP}
-C {devices/lab_wire.sym} 1740 -120 0 1 {name=p182 sig_type=std_logic lab=mmVB37}
-C {devices/lab_wire.sym} 1740 -80 0 1 {name=p183 sig_type=std_logic lab=mmVB18}
-C {devices/lab_wire.sym} 1740 -40 0 1 {name=p184 sig_type=std_logic lab=mmVB12}
-C {devices/lab_wire.sym} 1740 0 0 1 {name=p185 sig_type=std_logic lab=mmVBG}
-C {devices/lab_wire.sym} 1740 40 0 1 {name=p186 sig_type=std_logic lab=mmIB1MN}
-C {devices/lab_wire.sym} 2040 -330 0 1 {name=p187 sig_type=std_logic lab=P4}
-C {devices/lab_wire.sym} 2040 -150 0 1 {name=p188 sig_type=std_logic lab=P5}
-C {devices/lab_wire.sym} 2040 20 0 1 {name=p189 sig_type=std_logic lab=P6}
-C {devices/lab_wire.sym} 2280 -420 0 1 {name=p190 sig_type=std_logic lab=P7}
-C {devices/lab_wire.sym} 2280 -240 0 1 {name=p191 sig_type=std_logic lab=P9}
-C {devices/lab_wire.sym} 2280 -70 0 1 {name=p194 sig_type=std_logic lab=P10}
-C {devices/lab_wire.sym} 1900 -330 0 0 {name=p195 sig_type=std_logic lab=mmVBG}
-C {devices/lab_wire.sym} 1900 -150 0 0 {name=p196 sig_type=std_logic lab=mmVB12}
-C {devices/lab_wire.sym} 1900 20 0 0 {name=p197 sig_type=std_logic lab=mmVB18}
-C {devices/lab_wire.sym} 2140 -420 0 0 {name=p199 sig_type=std_logic lab=mmVB37}
-C {devices/lab_wire.sym} 2140 -240 0 0 {name=p200 sig_type=std_logic lab=mmIB1MP}
-C {devices/lab_wire.sym} 2140 -70 0 0 {name=p201 sig_type=std_logic lab=mmIB1MN}
-C {devices/lab_wire.sym} 1790 -530 3 1 {name=p202 sig_type=std_logic lab=mmVB37}
-C {devices/lab_wire.sym} 1770 -530 3 1 {name=p203 sig_type=std_logic lab=mmIB1MP}
-C {devices/lab_wire.sym} 1810 -530 3 1 {name=p204 sig_type=std_logic lab=mmVB18}
-C {devices/lab_wire.sym} 1770 -330 3 0 {name=p205 sig_type=std_logic lab=mmIB1MN}
-C {devices/lab_wire.sym} 1790 -330 3 0 {name=p207 sig_type=std_logic lab=mmVB12}
-C {devices/lab_wire.sym} 1740 -530 0 0 {name=p208 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 1740 -330 0 0 {name=p209 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2010 -440 0 1 {name=p212 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2010 -580 0 1 {name=p213 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 2010 -260 0 1 {name=p215 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2010 -400 0 1 {name=p216 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 2010 -80 0 1 {name=p217 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2010 -220 0 1 {name=p220 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 2010 90 0 1 {name=p221 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2010 -50 0 1 {name=p224 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 2250 0 0 1 {name=p225 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2250 -140 0 1 {name=p223 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 2250 -170 0 1 {name=p222 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2250 -310 0 1 {name=p228 sig_type=std_logic lab=VDD}
-C {devices/lab_wire.sym} 2250 -350 0 1 {name=p229 sig_type=std_logic lab=VSS}
-C {devices/lab_wire.sym} 2250 -490 0 1 {name=p231 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1500 530 0 0 {name=p158 sig_type=std_logic lab=P1}
+C {devices/lab_wire.sym} 1500 700 0 0 {name=p159 sig_type=std_logic lab=P2}
+C {devices/lab_wire.sym} 1610 770 0 1 {name=p163 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1610 600 0 1 {name=p164 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1610 630 0 1 {name=p166 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1610 460 0 1 {name=p167 sig_type=std_logic lab=VDD}
+C {mmOPAMP.sym} 1710 610 0 0 {name=x33}
+C {mmBIAS.sym} 1650 980 0 0 {name=x34}
+C {devices/lab_wire.sym} 1490 1170 0 0 {name=p160 sig_type=std_logic lab=PJEN4}
+C {devices/lab_wire.sym} 2030 530 0 1 {name=p162 sig_type=std_logic lab=P3}
+C {devices/lab_wire.sym} 1570 1080 0 0 {name=p165 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1570 880 0 0 {name=p177 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1730 880 0 1 {name=p178 sig_type=std_logic lab=mmIB1MP}
+C {devices/lab_wire.sym} 1730 920 0 1 {name=p182 sig_type=std_logic lab=mmVB37}
+C {devices/lab_wire.sym} 1730 960 0 1 {name=p183 sig_type=std_logic lab=mmVB18}
+C {devices/lab_wire.sym} 1730 1000 0 1 {name=p184 sig_type=std_logic lab=mmVB12}
+C {devices/lab_wire.sym} 1730 1040 0 1 {name=p185 sig_type=std_logic lab=mmVBG}
+C {devices/lab_wire.sym} 1730 1080 0 1 {name=p186 sig_type=std_logic lab=mmIB1MN}
+C {devices/lab_wire.sym} 2030 710 0 1 {name=p187 sig_type=std_logic lab=P4}
+C {devices/lab_wire.sym} 2030 890 0 1 {name=p188 sig_type=std_logic lab=P5}
+C {devices/lab_wire.sym} 2030 1060 0 1 {name=p189 sig_type=std_logic lab=P6}
+C {devices/lab_wire.sym} 2270 620 0 1 {name=p190 sig_type=std_logic lab=P7}
+C {devices/lab_wire.sym} 2270 800 0 1 {name=p191 sig_type=std_logic lab=P9}
+C {devices/lab_wire.sym} 2270 970 0 1 {name=p194 sig_type=std_logic lab=P10}
+C {devices/lab_wire.sym} 1890 710 0 0 {name=p195 sig_type=std_logic lab=mmVBG}
+C {devices/lab_wire.sym} 1890 890 0 0 {name=p196 sig_type=std_logic lab=mmVB12}
+C {devices/lab_wire.sym} 1890 1060 0 0 {name=p197 sig_type=std_logic lab=mmVB18}
+C {devices/lab_wire.sym} 2130 620 0 0 {name=p199 sig_type=std_logic lab=mmVB37}
+C {devices/lab_wire.sym} 2130 800 0 0 {name=p200 sig_type=std_logic lab=mmIB1MP}
+C {devices/lab_wire.sym} 2130 970 0 0 {name=p201 sig_type=std_logic lab=mmIB1MN}
+C {devices/lab_wire.sym} 1780 510 3 1 {name=p202 sig_type=std_logic lab=mmVB37}
+C {devices/lab_wire.sym} 1760 510 3 1 {name=p203 sig_type=std_logic lab=mmIB1MP}
+C {devices/lab_wire.sym} 1800 510 3 1 {name=p204 sig_type=std_logic lab=mmVB18}
+C {devices/lab_wire.sym} 1760 710 3 0 {name=p205 sig_type=std_logic lab=mmIB1MN}
+C {devices/lab_wire.sym} 1780 710 3 0 {name=p207 sig_type=std_logic lab=mmVB12}
+C {devices/lab_wire.sym} 1730 510 0 0 {name=p208 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1730 710 0 0 {name=p209 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2000 600 0 1 {name=p212 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2000 460 0 1 {name=p213 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2000 780 0 1 {name=p215 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2000 640 0 1 {name=p216 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2000 960 0 1 {name=p217 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2000 820 0 1 {name=p220 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2000 1130 0 1 {name=p221 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2000 990 0 1 {name=p224 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2240 1040 0 1 {name=p225 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2240 900 0 1 {name=p223 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2240 870 0 1 {name=p222 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2240 730 0 1 {name=p228 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2240 690 0 1 {name=p229 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2240 550 0 1 {name=p231 sig_type=std_logic lab=VDD}
 C {ASWSL.sym} 0 360 0 0 {name=x43}
 C {ASWSL.sym} 0 530 0 0 {name=x44}
 C {ASWSL.sym} 0 700 0 0 {name=x45}
@@ -515,15 +571,15 @@ C {ASWSL.sym} 890 350 0 0 {name=x26}
 C {ASWSL.sym} 890 520 0 0 {name=x27}
 C {ASWS.sym} 1190 350 0 0 {name=x29}
 C {ASWS.sym} 1190 520 0 0 {name=x30}
-C {ASWSL.sym} 1580 -510 0 0 {name=x31}
-C {ASWSL.sym} 1580 -340 0 0 {name=x32}
-C {ASW.sym} 1970 -510 0 0 {name=x35}
-C {ASWS.sym} 1970 -330 0 0 {name=x36}
-C {ASWS.sym} 1970 -150 0 0 {name=x37}
-C {ASWS.sym} 1970 20 0 0 {name=x38}
-C {ASWS.sym} 2210 -420 0 0 {name=x39}
-C {ASWS.sym} 2210 -240 0 0 {name=x40}
-C {ASWS.sym} 2210 -70 0 0 {name=x41}
+C {ASWSL.sym} 1570 530 0 0 {name=x31}
+C {ASWSL.sym} 1570 700 0 0 {name=x32}
+C {ASW.sym} 1960 530 0 0 {name=x35}
+C {ASWS.sym} 1960 710 0 0 {name=x36}
+C {ASWS.sym} 1960 890 0 0 {name=x37}
+C {ASWS.sym} 1960 1060 0 0 {name=x38}
+C {ASWS.sym} 2200 620 0 0 {name=x39}
+C {ASWS.sym} 2200 800 0 0 {name=x40}
+C {ASWS.sym} 2200 970 0 0 {name=x41}
 C {devices/lab_wire.sym} 820 350 0 0 {name=p233 sig_type=std_logic lab=P1}
 C {devices/lab_wire.sym} 820 520 0 0 {name=p235 sig_type=std_logic lab=P3}
 C {devices/lab_wire.sym} 930 590 0 1 {name=p240 sig_type=std_logic lab=VSS}
@@ -562,3 +618,59 @@ C {ASWSL.sym} 890 1060 0 0 {name=x60}
 C {ASWS.sym} 1190 1060 0 0 {name=x62}
 C {devices/lab_wire.sym} 780 1170 0 0 {name=p274 sig_type=std_logic lab=PJENC}
 C {kamiyama_inverter.sym} 1030 1060 0 0 {name=x63}
+C {ASWSL.sym} 1570 -670 0 0 {name=x54}
+C {ASWSL.sym} 1570 -500 0 0 {name=x55}
+C {ASWSL.sym} 1570 -330 0 0 {name=x56}
+C {ASW.sym} 2180 -670 0 0 {name=x57}
+C {ASW.sym} 2180 -500 0 0 {name=x64}
+C {ASW.sym} 2180 -330 0 0 {name=x65}
+C {ASW.sym} 2380 -670 0 0 {name=x66}
+C {ASW.sym} 2380 -500 0 0 {name=x67}
+C {ASW.sym} 2380 -330 0 0 {name=x68}
+C {kamiyama_Driver.sym} 1880 -500 0 0 {name=x69}
+C {devices/lab_wire.sym} 1610 -600 0 1 {name=p126 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1610 -430 0 1 {name=p133 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1610 -260 0 1 {name=p140 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1610 -740 0 1 {name=p143 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1610 -570 0 1 {name=p144 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1610 -400 0 1 {name=p145 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2220 -260 0 1 {name=p146 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2220 -430 0 1 {name=p149 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2220 -600 0 1 {name=p150 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2420 -600 0 1 {name=p151 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2420 -430 0 1 {name=p152 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2420 -260 0 1 {name=p153 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2220 -740 0 1 {name=p155 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2220 -570 0 1 {name=p156 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2220 -400 0 1 {name=p275 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2420 -400 0 1 {name=p276 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2420 -570 0 1 {name=p277 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2420 -740 0 1 {name=p278 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1500 -330 0 0 {name=p279 sig_type=std_logic lab=P1}
+C {devices/lab_wire.sym} 1500 -670 0 0 {name=p280 sig_type=std_logic lab=P2}
+C {devices/lab_wire.sym} 1500 -500 0 0 {name=p281 sig_type=std_logic lab=P3}
+C {devices/lab_wire.sym} 2250 -670 0 1 {name=p282 sig_type=std_logic lab=P4}
+C {devices/lab_wire.sym} 2250 -500 0 1 {name=p283 sig_type=std_logic lab=P6}
+C {devices/lab_wire.sym} 2250 -330 0 1 {name=p284 sig_type=std_logic lab=P9}
+C {devices/lab_wire.sym} 2450 -670 0 1 {name=p285 sig_type=std_logic lab=P7}
+C {devices/lab_wire.sym} 2450 -500 0 1 {name=p286 sig_type=std_logic lab=P10}
+C {devices/lab_wire.sym} 2450 -330 0 1 {name=p287 sig_type=std_logic lab=P5}
+C {devices/lab_wire.sym} 2030 -510 0 1 {name=p288 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2030 -490 0 1 {name=p289 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1450 -220 0 0 {name=p290 sig_type=std_logic lab=PJEN7}
+C {ASWSL.sym} 1570 20 0 0 {name=x53}
+C {ASWSL.sym} 1570 190 0 0 {name=x70}
+C {shishido_opamp_v12.sym} 1830 100 0 0 {name=x71}
+C {ASW.sym} 2100 100 0 0 {name=x72}
+C {devices/lab_wire.sym} 1610 90 0 1 {name=p291 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1610 260 0 1 {name=p292 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1830 150 0 1 {name=p293 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 2140 170 0 1 {name=p294 sig_type=std_logic lab=VSS}
+C {devices/lab_wire.sym} 1610 -50 0 1 {name=p295 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1610 120 0 1 {name=p296 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1830 50 0 1 {name=p297 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 2140 30 0 1 {name=p298 sig_type=std_logic lab=VDD}
+C {devices/lab_wire.sym} 1500 20 0 0 {name=p299 sig_type=std_logic lab=P1}
+C {devices/lab_wire.sym} 1500 190 0 0 {name=p300 sig_type=std_logic lab=P2}
+C {devices/lab_wire.sym} 2170 100 0 1 {name=p301 sig_type=std_logic lab=P3}
+C {devices/lab_wire.sym} 1460 300 0 0 {name=p302 sig_type=std_logic lab=PJEN5}
